@@ -762,22 +762,25 @@ const questions1 = [
 for (let i=0;i<questions1.length;i++){
     console.log(questions1[i].question)
     for (let x=0;x<questions1[i].answers.length;x++){
-        if (questions1[i].answers[x].isCorrect==true)console.log(questions1[i].answers[x].text)
+        if (questions1[i].answers[x].isCorrect)console.log(questions1[i].answers[x].text)
     }
     console.log("------------------")
 }
 
 
+
+
+
+
 let points = 0
-let dtext = ""
+let possibleQuestions = ""
 
 for (let i=0;i<questions1.length;i++){
-    console.log(questions1[i].answers.length)
-    dtext = ""
+    possibleQuestions = ""
     for (let w=0;w<questions1[i].answers.length;w++){
-        dtext += "\n  "+(w+1)+"  "+questions1[i].answers[w].text
+        possibleQuestions += "\n"+(w+1)+"  "+questions1[i].answers[w].text
     }
-    let answer=parseInt(prompt(`${questions1[i].question},${dtext}`))-1
+    let answer=parseInt(prompt(`${i+1}  ${questions1[i].question},${possibleQuestions}`))-1
     if (answer>questions1[i].answers.length-1 || answer<0 || isNaN(answer)){
         i--
         alert("Blogas ivedimas, kartokite")
@@ -788,6 +791,6 @@ for (let i=0;i<questions1.length;i++){
         else alert("Neteisingai")
     }
 }
+if (questions1.length%points>=2)alert(`Sveikiname! Is ${questions1.length} klausimu teisingai atsakete i ${points}!`)
 
-alert(`Is 20 klausimu teisingai atsakete i ${points}`)
 
