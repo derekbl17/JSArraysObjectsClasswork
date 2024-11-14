@@ -759,6 +759,8 @@ const questions1 = [
   
 
 
+
+
 for (let i=0;i<questions1.length;i++){
     console.log(questions1[i].question)
     for (let x=0;x<questions1[i].answers.length;x++){
@@ -773,24 +775,109 @@ for (let i=0;i<questions1.length;i++){
 ///////// Viktorina
 
 let points = 0
-let possibleQuestions = ""
+let possibleAnswers = ""
+let answerArray =[]
 
-for (let i=0;i<questions1.length;i++){
-    possibleQuestions = ""
-    for (let w=0;w<questions1[i].answers.length;w++){
-        possibleQuestions += "\n"+(w+1)+"  "+questions1[i].answers[w].text
-    }
-    let answer=parseInt(prompt(`${i+1}  ${questions1[i].question},${possibleQuestions}`))-1
-    if (answer>questions1[i].answers.length-1 || answer<0 || isNaN(answer)){
-        i--
-        alert("Blogas ivedimas, kartokite")
-        continue
-    }
-    else{
-        if (questions1[i].answers[answer].isCorrect) alert("Teisingai!"),points++
-        else alert("Neteisingai")
-    }
-}
-if (questions1.length/points<=2)alert(`Sveikiname! Is ${questions1.length} klausimu teisingai atsakete i ${points}!`)
+// for (let i=0;i<questions1.length;i++){
+//     possibleAnswers = ""
+//     for (let w=0;w<questions1[i].answers.length;w++){
+//         possibleAnswers += "\n"+(w+1)+"  "+questions1[i].answers[w].text
+//     }
+//     let answer=parseInt(prompt(`${i+1}  ${questions1[i].question},${possibleAnswers}`))-1
+//     if (answer>questions1[i].answers.length-1 || answer<0 || isNaN(answer)){
+//         i--
+//         alert("Blogas ivedimas, kartokite")
+//         continue
+//     }
+//     else{
+//         if (questions1[i].answers[answer].isCorrect) alert("Teisingai!"),points++
+//         else alert("Neteisingai")
+//     }
+// }
+// if (questions1.length/points<=2)alert(`Sveikiname! Is ${questions1.length} klausimu teisingai atsakete i ${points}!`)
 
 //////////////
+
+
+
+
+
+//Array.from({ length: 5 }, (_, index) => index * index)
+
+
+// const promptAnswers=Array.from({length:(questions1[2].answers.length)}, (_,i) => i)
+// console.log(promptAnswers)
+// while (promptAnswers.length>0){
+//   // let z=0
+//   console.log(promptAnswers.splice(Math.floor(Math.random()*promptAnswers.length-z),1))
+  // z++
+  // console.log(promptAnswers)
+  // console.log(Math.floor(Math.random()*promptAnswers.length))
+// }
+// const promptAnswers=Array.from({length:(questions1[i].answers.length)}, (_,l) => l)
+// while (promptAnswers.length>0)promptAnswers.splice(Math.floor(Math.random()*promptAnswers.length),1)
+
+// const promptAnswers=Array.from({}, () =>
+
+// const questionArray = Array.from({length:(questions1.length)}, (_,l) => l)
+// console.log(questionArray)
+// questionPick=questionArray.splice(Math.floor(Math.random()*questionArray.length),1)
+
+// for (let i=0;i<questions1.length;i++){
+//     possibleAnswers = ""
+//     answerArray=[]
+//     let questionPick = 0
+//     const questionArray = Array.from({length:(questions1.length)}, (_,l) => l)
+//     questionPick=questionArray.splice(Math.floor(Math.random()*questionArray.length),1)
+//     const promptAnswers=Array.from({length:(questions1[questionPick].answers.length)}, (_,l) => l)
+
+//     for (let w=0;w<questions1[questionPick].answers.length;w++){
+
+//         let answerPick = 0
+//         answerPick=promptAnswers.splice(Math.floor(Math.random()*promptAnswers.length),1)
+//         answerArray.push(questions1[questionPick].answers[answerPick].isCorrect)
+//         console.log(answerArray)
+//         possibleAnswers += "\n"+(w+1)+"  "+questions1[questionPick].answers[answerPick].text
+//     }
+
+//     let answer=parseInt(prompt(`${i+1}  ${questions1[questionPick].question},${possibleAnswers}`))-1
+
+//     if (answer>questions1[questionPick].answers.length-1 || answer<0 || isNaN(answer)){
+//         i--
+//         alert("Blogas ivedimas, kartokite")
+//         continue
+//     }
+
+//     else{
+//         if (answerArray[answer]) alert("Teisingai!"),points++
+//         else alert("Neteisingai")
+//     }
+// }
+// if (questions1.length/points<=2)alert(`Sveikiname! Is ${questions1.length} klausimu teisingai atsakete i ${points}!`)
+
+
+
+let textt = "Jonas"
+localStorage.setItem("text",textt)
+let textt2 = "Petras"
+localStorage.setItem("text",textt2)
+
+let nm = 3
+localStorage.setItem("number",nm)
+
+let txet = localStorage.getItem(textt)
+console.log(typeof txet)
+
+const arrgh = ["TOmas","Linas","Domas"]
+localStorage.setItem("arr1",arrgh)
+console.log(typeof localStorage.getItem("arr1"))
+
+let parsedData=localStorage.getItem("arr1")
+console.log(parsedData)
+
+localStorage.setItem("familija", JSON.stringify(family))
+let fromLS=JSON.parse(localStorage.getItem("familija"))
+console.log(fromLS)
+console.log(localStorage.getItem("familija"))
+
+localStorage.removeItem("number")
