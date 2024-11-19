@@ -77,26 +77,30 @@ console.log(localStorage.getItem("favorites"))
 
 
 
-// const countryArr = []
-// console.log(infoDump.length)
-// console.log(infoDump[26].name.official)
-// countryArr.push({Index: 0, "Country name": infoDump[0].name.official, Capital: infoDump[0].capital })
-// console.log(countryArr)
+
 const countryArr = []
-function LSpusher(){
-    for (let i=0;i<infoDump.length;i++){
-        if (infoDump[i].capital){
-            countryArr.push({index: i, "Country name": infoDump[i].name.official, capital: infoDump[i].capital[0]})
-        }
-        else countryArr.push({index: i, "Country name": infoDump[i].name.official, capital: "Data not found"})
-        // else countryArr.push({index: i, "Country name": infoDump[i].name.official, Capital: "Data not found"})
-        console.log(`${countryArr[i].index} data:\nCountry name: ${countryArr[i]["Country name"]}\nCapital: ${countryArr[i].capital}`)
-    }
-    localStorage.setItem("countries",JSON.stringify(countryArr))
+
+// fill array with data, check and fill empty fields with "Data not found"
+for (let i=0;i<infoDump.length;i++){
+    if (infoDump[i].capital && infoDump[i].name.official) countryArr.push({index: i+1, "Country name": infoDump[i].name.official, capital: infoDump[i].capital[0]})
+
+    else if (!infoDump[i].capital && infoDump[i].name.official) countryArr.push({index: i+1, "Country name": infoDump[i].name.official, capital: "Data not found"})
+
+    else if (infoDump[i].capital && !infoDump[i].name.official) countryArr.push({index: i+1, "Country name": "Data not found", capital: infoDump[i].capital[0]})
+
+    else countryArr.push({index: i+1, "Country name": "Data not found", capital: "Data not found"})
 }
-LSpusher()
-console.log(countryArr)
-console.log(infoDump)
 
 
-console.log(infoDump[1].capital[0])
+// check if local storage has this data, if not - add
+if (localStorage.getItem("countries")!=JSON.stringify(countryArr)) localStorage.setItem("countries",JSON.stringify(countryArr))
+
+
+// Print data in console
+for (let i=0;i<infoDump.length;i++){
+    console.log(`${countryArr[i].index} data:`);
+    console.log(`Country name: ${countryArr[i]["Country name"]}`)
+    console.log(`Capital: ${countryArr[i].capital}`)
+    console.log("---------------------------------")
+};
+
