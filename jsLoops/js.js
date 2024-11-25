@@ -881,3 +881,4 @@ console.log(fromLS)
 console.log(localStorage.getItem("familija"))
 
 localStorage.removeItem("number")
+// localStorage.clear()
