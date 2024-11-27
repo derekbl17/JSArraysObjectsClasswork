@@ -130,87 +130,215 @@ const yap = inp => console.log(inp)
 // // })
 
 
-yap("zzzzzzzz")
-let body = document.querySelector("body")
+// yap("zzzzzzzz")
+// let body = document.querySelector("body")
 
-let box = document.createElement("div")
-body.appendChild(box)
+// let box = document.createElement("div")
+// body.appendChild(box)
 
-let text = document.createElement("h1")
-text.innerText="hello world"
+// let text = document.createElement("h1")
+// text.innerText="hello world"
 
-let text2 = document.createElement("h2")
-text2.innerText="Hi again"
+// let text2 = document.createElement("h2")
+// text2.innerText="Hi again"
 
-box.append(text)
-text.append(text2)
+// box.append(text)
+// text.append(text2)
 
-box.className="myClass"
-box.setAttribute("id","myId")
+// box.className="myClass"
+// box.setAttribute("id","myId")
 
-let image = document.createElement("img")
-image.setAttribute("src","https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg")
-image.setAttribute("alt","img desc")
+// let image = document.createElement("img")
+// image.setAttribute("src","https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg")
+// image.setAttribute("alt","img desc")
 
-box.append(image)
+// box.append(image)
 
 
 
-let tags = document.getElementsByTagName("p")
+// let tags = document.getElementsByTagName("p")
 
-for (let i=0;i<tags.length;i++){
-    if (i%2==0){
-        tags[i].style.color="Red"
-        tags[i].style.background="black"
+// for (let i=0;i<tags.length;i++){
+//     if (i%2==0){
+//         tags[i].style.color="Red"
+//         tags[i].style.background="black"
+//     }
+//     else{
+//         tags[i].style.color="white"
+//         tags[i].style.background="green"
+//     }
+// }
+
+
+
+// let button=document.getElementById("btn")
+// let inputValue=document.getElementById("inpt")
+
+
+// let box2 = document.getElementById("box2")
+
+// button.addEventListener("click",(event)=>{
+//     event.preventDefault()
+//     console.log(inputValue.value)
+
+//     let txtUI=document.createElement("p")
+//     txtUI.innerText=inputValue.value
+//     box2.appendChild(txtUI)
+
+//     inputValue.value=""
+// });
+
+
+
+
+
+
+// let addButton = document.getElementById("buttonAdd")
+// let remButton = document.getElementById("buttonRemove")
+
+// addButton.style = "color:green"
+// addButton.style.backgroundColor = "yellow"
+
+
+// remButton.style = "color:red"
+// remButton.style.backgroundColor = "black"
+
+
+// addButton.addEventListener("click",()=>{
+//     let randomEl=document.createElement("p")
+//     randomEl.innerText="I am alive"
+//     randomEl.setAttribute("id","killme")
+//     remButton.insertAdjacentElement("afterend",randomEl)
+// })
+
+// remButton.addEventListener("click",()=>{
+//     let remEl=document.getElementById("killme")
+//     remEl.remove()
+// })
+
+
+
+
+
+
+
+// let clicker=document.getElementById("clicker")
+
+// let countBox=document.createElement("p")
+
+// clicker.insertAdjacentElement("beforeBegin",countBox)
+
+// let counter=0
+// clicker.addEventListener("click",()=>{
+//     counter+=1
+//     countBox.innerText=counter
+// })
+
+
+
+//   1
+let el1=document.createElement("p")
+let el2=document.createElement("p")
+let el3=document.createElement("p")
+let el4=document.createElement("p")
+let el5=document.createElement("p")
+
+//   2
+el1.innerText="one"
+el2.innerText="two"
+el3.innerText="three"
+el4.innerText="four"
+el5.innerText="five"
+
+//   3
+el1.setAttribute("id", "one")
+el2.setAttribute("class", "two")
+el3.setAttribute("selc", "three")
+el4.setAttribute("class", "four")
+el5.setAttribute("id", "five")
+
+
+clicker.insertAdjacentElement("afterend",el1)
+clicker.insertAdjacentElement("afterend",el2)
+clicker.insertAdjacentElement("afterend",el3)
+clicker.insertAdjacentElement("afterend",el4)
+clicker.insertAdjacentElement("afterend",el5)
+
+
+document.getElementById("one").style.color="red";
+document.getElementsByClassName("two")[0].style.color="blue"
+document.querySelector('[selc="three"]').style.color="green"
+document.getElementsByTagName("p")[1].style.color="yellow"
+document.getElementById("five").style.color="gray";
+
+//   4
+let div1=document.createElement("div")
+let div2=document.createElement("div")
+let div3=document.createElement("div")
+let div4=document.createElement("div")
+let div5=document.createElement("div")
+let div6=document.createElement("div")
+
+el1.insertAdjacentElement("afterend",div1)
+el1.insertAdjacentElement("afterend",div2)
+el1.insertAdjacentElement("afterend",div3)
+el1.insertAdjacentElement("afterend",div4)
+el1.insertAdjacentElement("afterend",div5)
+el1.insertAdjacentElement("afterend",div6)
+
+div1.style="width:100px;height:100px;background-color:red"
+div2.style="width:100px;height:100px;background-color:blue"
+div3.style="width:100px;height:100px;background-color:green"
+div4.style="width:100px;height:100px;background-color:yellow"
+div5.style="width:100px;height:100px;background-color:black"
+div6.style="width:100px;height:100px;background-color:gray"
+
+
+//   5
+let colorSwitch=document.createElement("button")
+colorSwitch.innerText="SWITCH"
+div1.insertAdjacentElement("afterend",colorSwitch)
+
+colorSwitch.addEventListener("click",()=>{
+    function randomNum(){
+        const rn = Math.floor(Math.random() * 255)
+        return rn
     }
-    else{
-        tags[i].style.color="white"
-        tags[i].style.background="green"
+    div1.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+    div2.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+    div3.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+    div4.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+    div5.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+    div6.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+
+})
+
+
+//   6
+
+const masyvas = ["zodis","obuolys","remote","Apples","Red fox","Blue fox","Jester","Ace","Diamond","grass","Waterfall","Explosion","Christmas","numbers","Tractor","Trace","Build","Concrete","Windows","Snow","Hoodlum","Rocketship"]
+
+
+
+let p1=document.createElement("p")
+let p2=document.createElement("p")
+let p3=document.createElement("p")
+let p4=document.createElement("p")
+let p5=document.createElement("p")
+let p6=document.createElement("p")
+
+colorSwitch.insertAdjacentElement("afterend",p1)
+colorSwitch.insertAdjacentElement("afterend",p2)
+colorSwitch.insertAdjacentElement("afterend",p3)
+colorSwitch.insertAdjacentElement("afterend",p4)
+colorSwitch.insertAdjacentElement("afterend",p5)
+colorSwitch.insertAdjacentElement("afterend",p6)
+
+for (let i=6;i<12;i++){
+    function randWord(){
+        let saidWord=masyvas[Math.floor(Math.random() * masyvas.length)]
+        return saidWord
     }
+    document.getElementsByTagName("p")[i-1].innerText=`${randWord()}`
 }
 
-
-
-let button=document.getElementById("btn")
-let inputValue=document.getElementById("inpt")
-
-
-let box2 = document.getElementById("box2")
-
-button.addEventListener("click",(event)=>{
-    event.preventDefault()
-    console.log(inputValue.value)
-
-    let txtUI=document.createElement("p")
-    txtUI.innerText=inputValue.value
-    box2.appendChild(txtUI)
-
-    inputValue.value=""
-});
-
-
-let addButton = document.getElementById("buttonAdd")
-let remButton = document.getElementById("buttonRemove")
-
-addButton.addEventListener("click",()=>{
-    let randomEl=document.createElement("p")
-    randomEl.innerText="I am alive"
-    randomEl.setAttribute("id","killme")
-    remButton.insertAdjacentElement("afterend",randomEl)
-})
-
-remButton.addEventListener("click",()=>{
-    let remEl=document.getElementById("killme")
-    remEl.remove()
-})
-
-let clicker=document.getElementById("clicker")
-
-
-let count=0
-clicker.addEventListener("click",()=>{
-    let counter=document.createElement("p")
-    count+=1
-    yap(count)
-    clicker.insertAdjacentElement("afterend",count)
-})
