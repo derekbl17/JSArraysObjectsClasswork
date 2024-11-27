@@ -319,26 +319,78 @@ colorSwitch.addEventListener("click",()=>{
 const masyvas = ["zodis","obuolys","remote","Apples","Red fox","Blue fox","Jester","Ace","Diamond","grass","Waterfall","Explosion","Christmas","numbers","Tractor","Trace","Build","Concrete","Windows","Snow","Hoodlum","Rocketship"]
 
 
-
-let p1=document.createElement("p")
-let p2=document.createElement("p")
-let p3=document.createElement("p")
-let p4=document.createElement("p")
-let p5=document.createElement("p")
-let p6=document.createElement("p")
-
-colorSwitch.insertAdjacentElement("afterend",p1)
-colorSwitch.insertAdjacentElement("afterend",p2)
-colorSwitch.insertAdjacentElement("afterend",p3)
-colorSwitch.insertAdjacentElement("afterend",p4)
-colorSwitch.insertAdjacentElement("afterend",p5)
-colorSwitch.insertAdjacentElement("afterend",p6)
-
-for (let i=6;i<12;i++){
+for (let i=0;i<7;i++){
+    let pp=document.createElement("p")
     function randWord(){
         let saidWord=masyvas[Math.floor(Math.random() * masyvas.length)]
         return saidWord
     }
-    document.getElementsByTagName("p")[i-1].innerText=`${randWord()}`
+    pp.innerText= `${randWord()}`
+    colorSwitch.insertAdjacentElement("afterend",pp)
 }
 
+// let p1=document.createElement("p")
+// let p2=document.createElement("p")
+// let p3=document.createElement("p")
+// let p4=document.createElement("p")
+// let p5=document.createElement("p")
+// let p6=document.createElement("p")
+
+// colorSwitch.insertAdjacentElement("afterend",p1)
+// colorSwitch.insertAdjacentElement("afterend",p2)
+// colorSwitch.insertAdjacentElement("afterend",p3)
+// colorSwitch.insertAdjacentElement("afterend",p4)
+// colorSwitch.insertAdjacentElement("afterend",p5)
+// colorSwitch.insertAdjacentElement("afterend",p6)
+
+// for (let i=6;i<12;i++){
+//     function randWord(){
+//         let saidWord=masyvas[Math.floor(Math.random() * masyvas.length)]
+//         return saidWord
+//     }
+//     document.getElementsByTagName("p")[i-1].innerText=
+// }
+
+
+//////////////////
+console.log(document.getElementsByTagName("table"))
+
+tableButton.addEventListener("click",()=>{
+    document.getElementById("tableContainer").insertAdjacentElement("beforeend",(document.createElement("table")))
+    for (let i=0;i<document.getElementById("rows").value;i++){
+        document.getElementsByTagName("table")[0].appendChild(document.createElement("tr"))
+    }
+    for (let j=0;j<document.getElementById("rows").value;j++){
+        for (let z=0;z<document.getElementById("colls").value;z++){
+        document.getElementsByTagName("tr")[j].appendChild(document.createElement("td"))
+        }
+    }
+    for (let x=0;x<document.querySelectorAll("td").length;x++){
+        document.getElementsByTagName("td")[x].innerText="data"
+        if (x%2==0){
+            document.getElementsByTagName("td")[x].style="border:1px solid black;background-color:red"
+        }
+        else {
+            document.getElementsByTagName("td")[x].style="border:1px solid black;background-color:green"
+        }
+    }
+    document.getElementsByTagName("table")[0].style="border:1px solid black"
+
+})
+
+////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("tableContainer").insertAdjacentElement("beforeend",document.createElement("div"))
+document.ge
