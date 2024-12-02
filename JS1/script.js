@@ -393,36 +393,15 @@ tableButton.addEventListener("click",()=>{
 ////////////////////////
 
 
+let gallery = document.getElementById("gala");
+gallery.setAttribute("display", "flex");
+gallery.style = "position:relative; padding: 3px; margin:5px;";
 
+let images = [];
+let likes = [];
 
-
-
-
-
-
-
-
-
-
-
-
-let gallery = document.getElementById("gala")
-gallery.setAttribute("display","flex")
-gallery.style="position:relative; padding: 3px; margin:5px;"
-
-let symbol = document.createElement("p")
-symbol.innerHTML="&#9829;"
-
-
-
-for (let i=0;i<=10;i++){
-    gallery.appendChild(document.createElement("div"))
-    gallery.getElementsByTagName("div")[i].appendChild(document.createElement("img"))
-    gallery.getElementsByTagName("div")[i].style="width: min-content; display:inline-block;"
-}
-
-
-const imgLib = ["https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
+const imgLib = [
+    "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
     "https://dubaitickets.tours/wp-content/uploads/2023/03/img-worlds-of-adventure-dubai-ticket-9-1.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s",
     "https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery",
@@ -432,31 +411,107 @@ const imgLib = ["https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3W
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeXoPJvCJcPL4MhitJzrSvJUSVxz5femYtw&s",
     "https://www.arabiantourpackages.com/assets/images/tours/gallery/img-world-dubai-tickets-3.jpeg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MihrG6SuOD1aoln69boEKA2ogNHTonrWOw&s",
-    "https://cdn-icons-png.flaticon.com/512/8760/8760611.png"];
+    "https://cdn-icons-png.flaticon.com/512/8760/8760611.png"
+];
 
 
-for (let i=0;i<document.images.length;i++){
-    document.images[i].setAttribute("src",`${imgLib[i]}`)
-    document.images[i].setAttribute("alt","image like that")
-    document.images[i].style="height:200px; width:300px;  border: solid black; padding:1px; margin:1px;"
+for (let i = 0; i <= 10; i++) {
+    let div = document.createElement("div");
+    div.style = "width: min-content; display:inline-block;";
+    gallery.appendChild(div);
+
+    let img = document.createElement("img");
+    img.src = imgLib[i];
+    img.alt = "image like that";
+    img.style = "height:10rem; width:15rem; border: solid black; padding:1px; margin:1px;";
+    div.appendChild(img);
+    images.push(img);
+
+
+    let like = document.createElement("p");
+    like.innerHTML = "&#9829;";
+    like.style = "position:absolute; margin-left:5px; color:gray; font-size:30px; cursor:pointer;";
+    like.addEventListener("click", () => {
+        if (like.style.color === "gray") {
+            like.style.color = "red";
+            localStorage.setItem(`image #${i}`, img.src);
+        } else {
+            localStorage.removeItem(`image #${i}`);
+            like.style.color = "gray";
+        }
+    });
+
+    likes.push(like);
+    img.insertAdjacentElement("beforebegin", like);
+
+    if (localStorage.getItem(`image #${i}`)) {
+        like.style.color = "red";
+    }
 }
 
 
-for (let i=0;i<document.images.length;i++){
-    document.images[i].insertAdjacentElement("beforebegin",document.createElement("p"))
-    gallery.getElementsByTagName("p")[i].style="position:absolute; margin-left:5px; color:gray; font-size:30px; cursor:pointer; "
-    gallery.getElementsByTagName("p")[i].innerHTML="&#9829;"
-    gallery.getElementsByTagName("p")[i].addEventListener("click",()=>{
-        if (gallery.getElementsByTagName("p")[i].style.color=="gray"){
-            gallery.getElementsByTagName("p")[i].style.color="red"
-            localStorage.setItem(`image #${i}`,gallery.getElementsByTagName("img")[i].src)
-        }
-        else{
-            localStorage.removeItem(`image #${i}`)
-            gallery.getElementsByTagName("p")[i].style.color="gray"
-        }
-    })
-}
+
+
+
+
+
+
+
+
+
+
+
+// let gallery = document.getElementById("gala")
+// gallery.setAttribute("display","flex")
+// gallery.style="position:relative; padding: 3px; margin:5px;"
+
+// let symbol = document.createElement("p")
+// symbol.innerHTML="&#9829;"
+
+
+
+// for (let i=0;i<=10;i++){
+//     gallery.appendChild(document.createElement("div"))
+//     gallery.getElementsByTagName("div")[i].appendChild(document.createElement("img"))
+//     gallery.getElementsByTagName("div")[i].style="width: min-content; display:inline-block;"
+// }
+
+
+// const imgLib = ["https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
+//     "https://dubaitickets.tours/wp-content/uploads/2023/03/img-worlds-of-adventure-dubai-ticket-9-1.jpg",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s",
+//     "https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery",
+//     "https://world-schools.com/wp-content/uploads/2023/01/IMG-Academy-cover-WS.webp",
+//     "https://www.hollywoodreporter.com/wp-content/uploads/2012/12/img_logo_blue.jpg?w=1440&h=810&crop=1",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxoPqQ0ai6pu6YUDIn4cbkLH5XduPwZq2hKg&s",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeXoPJvCJcPL4MhitJzrSvJUSVxz5femYtw&s",
+//     "https://www.arabiantourpackages.com/assets/images/tours/gallery/img-world-dubai-tickets-3.jpeg",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MihrG6SuOD1aoln69boEKA2ogNHTonrWOw&s",
+//     "https://cdn-icons-png.flaticon.com/512/8760/8760611.png"];
+
+
+// for (let i=0;i<document.images.length;i++){
+//     document.images[i].setAttribute("src",`${imgLib[i]}`)
+//     document.images[i].setAttribute("alt","image like that")
+//     document.images[i].style="height:200px; width:300px;  border: solid black; padding:1px; margin:1px;"
+// }
+
+
+// for (let i=0;i<document.images.length;i++){
+//     document.images[i].insertAdjacentElement("beforebegin",document.createElement("p"))
+//     gallery.getElementsByTagName("p")[i].style="position:absolute; margin-left:5px; color:gray; font-size:30px; cursor:pointer; "
+//     gallery.getElementsByTagName("p")[i].innerHTML="&#9829;"
+//     gallery.getElementsByTagName("p")[i].addEventListener("click",()=>{
+//         if (gallery.getElementsByTagName("p")[i].style.color=="gray"){
+//             gallery.getElementsByTagName("p")[i].style.color="red"
+//             localStorage.setItem(`image #${i}`,gallery.getElementsByTagName("img")[i].src)
+//         }
+//         else{
+//             localStorage.removeItem(`image #${i}`)
+//             gallery.getElementsByTagName("p")[i].style.color="gray"
+//         }
+//     })
+// }
 
 
 
@@ -515,20 +570,58 @@ productQuantityContainer.style = "width: 100%;"
 formFieldset.appendChild(productQuantityContainer)
 
 
+
+
+////// Functions
+
+// web product list display
+function displayProducts() {
+    const products = JSON.parse(localStorage.getItem("Products")) || [];
+    let productList = document.getElementById("product-list");
+
+    // create list
+    if (!productList) {
+        productList = document.createElement("ul");
+        productList.setAttribute("id", "product-list");
+        form.appendChild(productList);
+    }
+    // Clear list
+    productList.innerHTML = "";
+    // Fill list
+    products.forEach(product => {
+        const item = document.createElement("li");
+        item.textContent = `ID: ${product.id}, Name: ${product.name}, Quantity: ${product.quantity}`;
+        productList.appendChild(item);
+    });
+}
+displayProducts()
+
+// duplicate checker
+function checkDuplicate(idCheck) {
+    const products = JSON.parse(localStorage.getItem("Products")) || [];
+    return products.some(product => product.id == idCheck);
+}
+
 ///// buttons
+
+
 // function to check for duplicate IDs in array
-function checkDuplicates(idCheck){
-    for (let i=0;i<productArray.length;i++){
-        if (productArray[i].id == idCheck)return true
-        else return false
-    }
-}
+// function checkDuplicates(idCheck){
+//     for (let i=0;i<productArray.length;i++){
+//         if (productArray[i].id == idCheck)return true
+//         else return false
+//     }
+// }
 // check for duplicate IDs in localstorage
-function checkDuplicate(idCheck){
-    for (let i in JSON.parse(localStorage.getItem("Products"))){
-        return JSON.parse(localStorage.getItem("Products"))[i].id=idCheck
-    }
-}
+
+// function checkDuplicate(idCheck){
+//     for (let i in JSON.parse(localStorage.getItem("Products"))){
+//         return JSON.parse(localStorage.getItem("Products"))[i].id=idCheck
+//     }
+// }
+
+
+
 // add product to array if all inputs are valid
 const addButton = document.createElement("button")
 addButton.innerHTML = "Add new item"
@@ -544,10 +637,17 @@ addButton.innerHTML = "Add new item"
 
 addButton.addEventListener("click",(e)=>{
     e.preventDefault()
+
+    if (!productIdInput.value.trim() || !productNameInput.value.trim() || !productQuantityInput.value.trim() || productQuantityInput.value.trim() <= 0) {
+        alert("Please enter valid inputs.");
+        return;
+    }
+
     if (!checkDuplicate(productIdInput.value)){
         const newItem = {id:`${productIdInput.value}`, name:`${productNameInput.value}`, quantity:`${productQuantityInput.value}`}
         productArray.push(newItem)
         updateLocalStorage()
+        displayProducts();
     }
     else alert("Id already exists")
 })
@@ -555,8 +655,46 @@ addButton.addEventListener("click",(e)=>{
 const editButton = document.createElement("button")
 editButton.innerHTML = "Edit existing item"
 
+editButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = productIdInput.value.trim();
+    const name = productNameInput.value.trim();
+    const quantity = productQuantityInput.value.trim();
+
+    const products = JSON.parse(localStorage.getItem("Products")) || [];
+    const productIndex = products.findIndex(product => product.id == id);
+
+    if (productIndex > -1) {
+        products[productIndex] = { id, name, quantity: parseInt(quantity, 10) };
+        localStorage.setItem("Products", JSON.stringify(products));
+        displayProducts();
+        alert("Product updated successfully!");
+    } else {
+        alert("Product not found.");
+    }
+});
+
+
 const removeButton = document.createElement("button")
 removeButton.innerHTML = "Remove existing item"
+
+removeButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = productIdInput.value.trim();
+
+    const products = JSON.parse(localStorage.getItem("Products")) || [];
+    const updatedProducts = products.filter(product => product.id != id);
+
+    if (products.length !== updatedProducts.length) {
+        localStorage.setItem("Products", JSON.stringify(updatedProducts));
+        alert("Product removed successfully!");
+        displayProducts();
+    } else {
+        alert("Product not found.");
+    }
+});
+
+
 
 // button container
 const ButtonContainer = document.createElement("div")
