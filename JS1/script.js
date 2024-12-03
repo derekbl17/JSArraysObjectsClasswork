@@ -768,8 +768,12 @@ const productFindTable = document.createElement("table")
 let prodFindEnable = false
 productFindButton.addEventListener("click", (e) => {
     e.preventDefault()
+    if (!prodFindEnable){
+        const productFindTableRow = document.createElement("tr")
+        const productFindTableRowData = document.createElement("td")
+        productFindTableRow.appendChild(productFindTableRowData)
 
-    const productFindTableRow = document.createElement("tr")
-    const productFindTableRowData = document.createElement("td")
-    productFindTableRow.appendChild(productFindTableRowData)
+    }
+
+    
 })
