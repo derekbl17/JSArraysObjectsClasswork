@@ -401,21 +401,21 @@ let images = [];
 let likes = [];
 
 const imgLib = [
-    "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
-    "https://dubaitickets.tours/wp-content/uploads/2023/03/img-worlds-of-adventure-dubai-ticket-9-1.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s",
-    "https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery",
-    "https://world-schools.com/wp-content/uploads/2023/01/IMG-Academy-cover-WS.webp",
-    "https://www.hollywoodreporter.com/wp-content/uploads/2012/12/img_logo_blue.jpg?w=1440&h=810&crop=1",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxoPqQ0ai6pu6YUDIn4cbkLH5XduPwZq2hKg&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeXoPJvCJcPL4MhitJzrSvJUSVxz5femYtw&s",
-    "https://www.arabiantourpackages.com/assets/images/tours/gallery/img-world-dubai-tickets-3.jpeg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MihrG6SuOD1aoln69boEKA2ogNHTonrWOw&s",
-    "https://cdn-icons-png.flaticon.com/512/8760/8760611.png"
+    // "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
+    // "https://dubaitickets.tours/wp-content/uploads/2023/03/img-worlds-of-adventure-dubai-ticket-9-1.jpg",
+    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s",
+    // "https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery",
+    // "https://world-schools.com/wp-content/uploads/2023/01/IMG-Academy-cover-WS.webp",
+    // "https://www.hollywoodreporter.com/wp-content/uploads/2012/12/img_logo_blue.jpg?w=1440&h=810&crop=1",
+    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxoPqQ0ai6pu6YUDIn4cbkLH5XduPwZq2hKg&s",
+    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeXoPJvCJcPL4MhitJzrSvJUSVxz5femYtw&s",
+    // "https://www.arabiantourpackages.com/assets/images/tours/gallery/img-world-dubai-tickets-3.jpeg",
+    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MihrG6SuOD1aoln69boEKA2ogNHTonrWOw&s",
+    // "https://cdn-icons-png.flaticon.com/512/8760/8760611.png"
 ];
 
 
-for (let i = 0; i <= 10; i++) {
+for (let i = 0; i < imgLib.length; i++) {
     let div = document.createElement("div");
     div.style = "width: min-content; display:inline-block;";
     gallery.appendChild(div);
@@ -511,6 +511,9 @@ for (let i = 0; i <= 10; i++) {
 //             gallery.getElementsByTagName("p")[i].style.color="gray"
 //         }
 //     })
+//     if (localStorage.getItem(`image #${i}`)) {
+//         like.style.color = "red";
+//     }
 // }
 
 
@@ -543,17 +546,31 @@ for (let i = 0; i <= 10; i++) {
 
 
 
-const productArray = []
+let productArray = []
+
+function updateProductArray(){
+    if (JSON.parse(localStorage.getItem("Products"))==null){
+        productArray = []
+    }
+    else {
+        productArray = JSON.parse(localStorage.getItem("Products"))
+    }
+}
+updateProductArray()
+console.log(productArray)
+
 function updateLocalStorage(){
     localStorage.setItem("Products",JSON.stringify(productArray))
 }
 
 // make form
 const form = document.createElement("form")
+form.style = "display:flex;"
 gallery.insertAdjacentElement("afterend", form)
 
 // fieldset in form
 const formFieldset = document.createElement("fieldset")
+formFieldset.style = "width:40%;"
 form.appendChild(formFieldset)
 
 // containers for inputs and labels
@@ -573,18 +590,17 @@ formFieldset.appendChild(productQuantityContainer)
 
 
 ////// Functions
+let productList = document.getElementById("product-list")
+productList = document.createElement("ul");
+productList.setAttribute("id", "product-list");
+formFieldset.insertAdjacentElement("beforeend",productList);
+
 
 // web product list display
 function displayProducts() {
     const products = JSON.parse(localStorage.getItem("Products")) || [];
     let productList = document.getElementById("product-list");
 
-    // create list
-    if (!productList) {
-        productList = document.createElement("ul");
-        productList.setAttribute("id", "product-list");
-        form.appendChild(productList);
-    }
     // Clear list
     productList.innerHTML = "";
     // Fill list
@@ -596,57 +612,38 @@ function displayProducts() {
 }
 displayProducts()
 
-// duplicate checker
-function checkDuplicate(idCheck) {
-    const products = JSON.parse(localStorage.getItem("Products")) || [];
-    return products.some(product => product.id == idCheck);
-}
-
 ///// buttons
 
-
-// function to check for duplicate IDs in array
-// function checkDuplicates(idCheck){
-//     for (let i=0;i<productArray.length;i++){
-//         if (productArray[i].id == idCheck)return true
-//         else return false
-//     }
-// }
-// check for duplicate IDs in localstorage
-
-// function checkDuplicate(idCheck){
-//     for (let i in JSON.parse(localStorage.getItem("Products"))){
-//         return JSON.parse(localStorage.getItem("Products"))[i].id=idCheck
-//     }
-// }
-
+function checkDuplicate(idCheck){
+    for (let i in JSON.parse(localStorage.getItem("Products"))){
+        console.log(JSON.parse(localStorage.getItem("Products"))[i].id==idCheck)
+        console.log(JSON.parse(localStorage.getItem("Products"))[i].id)
+        console.log(idCheck)
+        if (JSON.parse(localStorage.getItem("Products"))[i].id==idCheck)return true
+        
+    }
+    return false
+}
 
 
 // add product to array if all inputs are valid
 const addButton = document.createElement("button")
 addButton.innerHTML = "Add new item"
-// addButton.addEventListener("click",(e)=>{
-//     e.preventDefault()
-//     if (productIdInput.value && productNameInput.value && productQuantityInput.value && !checkDuplicates(productIdInput.value)){
-//         const newItem = {id:`${productIdInput.value}`, name:`${productNameInput.value}`, quantity:`${productQuantityInput.value}`}
-//         productArray.push(newItem)
-//         updateLocalStorage()
-//     }
-//     else if (checkDuplicates(productIdInput.value))alert("Id already exists")
-// })
 
 addButton.addEventListener("click",(e)=>{
     e.preventDefault()
 
-    if (!productIdInput.value.trim() || !productNameInput.value.trim() || !productQuantityInput.value.trim() || productQuantityInput.value.trim() <= 0) {
+    if (!productIdInput.value.trim() || !productNameInput.value.trim() || !productQuantityInput.value.trim() || productQuantityInput.value.trim() <= 0 || productIdInput.value <=0 ){
         alert("Please enter valid inputs.");
         return;
     }
 
     if (!checkDuplicate(productIdInput.value)){
         const newItem = {id:`${productIdInput.value}`, name:`${productNameInput.value}`, quantity:`${productQuantityInput.value}`}
+        console.log(newItem)
         productArray.push(newItem)
         updateLocalStorage()
+        updateProductArray()
         displayProducts();
     }
     else alert("Id already exists")
@@ -680,26 +677,30 @@ removeButton.innerHTML = "Remove existing item"
 
 removeButton.addEventListener("click", (e) => {
     e.preventDefault();
-    const id = productIdInput.value.trim();
+    const id = productIdInput.value;
 
     const products = JSON.parse(localStorage.getItem("Products")) || [];
     const updatedProducts = products.filter(product => product.id != id);
+    
 
     if (products.length !== updatedProducts.length) {
         localStorage.setItem("Products", JSON.stringify(updatedProducts));
+        productArray = updatedProducts
         alert("Product removed successfully!");
         displayProducts();
+        updateProductArray()
     } else {
         alert("Product not found.");
     }
+    console.log(productArray)
+    console.log(updatedProducts)
 });
-
 
 
 // button container
 const ButtonContainer = document.createElement("div")
 ButtonContainer.style="display:flex; justify-content: space-between; padding: 1%;"
-form.appendChild(ButtonContainer)
+form.getElementsByTagName("ul")[0].insertAdjacentElement("beforebegin",ButtonContainer)
 ButtonContainer.appendChild(addButton)
 ButtonContainer.appendChild(editButton)
 ButtonContainer.appendChild(removeButton)
@@ -740,20 +741,35 @@ productQuantityInput.setAttribute("id","productQuantityInput")
 productQuantityInput.required = true
 productQuantityInput.style = "width: 100%;"
 productQuantityContainer.appendChild(productQuantityInput)
-///
+
+const productFindFieldset = document.createElement("fieldset")
+productFindFieldset.style="width:40%;"
+form.appendChild(productFindFieldset)
+
+const productFindLabel = document.createElement("label")
+productFindLabel.setAttribute("for","productFindInput")
+productFindLabel.innerHTML="Find product by ID"
+productFindLabel.style="display:block;"
+
+const productFindInput = document.createElement("input")
+productFindInput.setAttribute("type","number")
+productFindInput.setAttribute("id","productFindInput")
+productFindInput.required = true
 
 
 
+const productFindButton = document.createElement("button")
+productFindButton.innerHTML="Search"
 
-// console.log(JSON.parse(localStorage.getItem("Products")))
+productFindFieldset.append(productFindLabel,productFindInput,productFindButton)
 
+const productFindTable = document.createElement("table")
 
-// function checkDuplicate(idCheck){
-//     for (let i in JSON.parse(localStorage.getItem("Products"))){
-//         console.log(JSON.parse(localStorage.getItem("Products"))[i].id==idCheck)
-//     }
-// }
-// checkDuplicate(3)
+let prodFindEnable = false
+productFindButton.addEventListener("click", (e) => {
+    e.preventDefault()
 
-
-
+    const productFindTableRow = document.createElement("tr")
+    const productFindTableRowData = document.createElement("td")
+    productFindTableRow.appendChild(productFindTableRowData)
+})
