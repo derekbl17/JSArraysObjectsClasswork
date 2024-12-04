@@ -1,10 +1,8 @@
 "use strict";
-const yap = inp => console.log(inp)
+const yap = (inp) => console.log(inp);
 // import {result} from "./data.js"
 // console.log(result)
 // localStorage.setItem("rez",JSON.stringify(result))
-
-
 
 // const isInLS=localStorage.getItem("favorites")
 // console.log(isInLS)
@@ -22,7 +20,7 @@ const yap = inp => console.log(inp)
 // movier(829280)
 
 // function favAddLS(ids){
-    
+
 // }
 
 // let h1Content = document.querySelector("h1")
@@ -65,7 +63,6 @@ const yap = inp => console.log(inp)
 
 // h1.style.color="purple"
 
-
 // let rootDiv =document.getElementById("root")
 
 // let img=document.createElement("img")
@@ -83,7 +80,6 @@ const yap = inp => console.log(inp)
 // rootDiv.insertAdjacentElement("beforeend",txt)
 // rootDiv.insertAdjacentElement("afterend",txt)
 
-
 // txt.remove()
 
 // // rootDiv.removeChild(img)
@@ -93,7 +89,6 @@ const yap = inp => console.log(inp)
 //     else img.style.borderRadius="100%"
 // }
 // )
-
 
 // function showAlert(){
 //     alert("Labas")
@@ -129,7 +124,6 @@ const yap = inp => console.log(inp)
 // //     console.log(event)
 // // })
 
-
 // yap("zzzzzzzz")
 // let body = document.querySelector("body")
 
@@ -154,8 +148,6 @@ const yap = inp => console.log(inp)
 
 // box.append(image)
 
-
-
 // let tags = document.getElementsByTagName("p")
 
 // for (let i=0;i<tags.length;i++){
@@ -169,11 +161,8 @@ const yap = inp => console.log(inp)
 //     }
 // }
 
-
-
 // let button=document.getElementById("btn")
 // let inputValue=document.getElementById("inpt")
-
 
 // let box2 = document.getElementById("box2")
 
@@ -188,21 +177,14 @@ const yap = inp => console.log(inp)
 //     inputValue.value=""
 // });
 
-
-
-
-
-
 // let addButton = document.getElementById("buttonAdd")
 // let remButton = document.getElementById("buttonRemove")
 
 // addButton.style = "color:green"
 // addButton.style.backgroundColor = "yellow"
 
-
 // remButton.style = "color:red"
 // remButton.style.backgroundColor = "black"
-
 
 // addButton.addEventListener("click",()=>{
 //     let randomEl=document.createElement("p")
@@ -216,12 +198,6 @@ const yap = inp => console.log(inp)
 //     remEl.remove()
 // })
 
-
-
-
-
-
-
 // let clicker=document.getElementById("clicker")
 
 // let countBox=document.createElement("p")
@@ -234,100 +210,93 @@ const yap = inp => console.log(inp)
 //     countBox.innerText=counter
 // })
 
+// //   1
+// let el1=document.createElement("p")
+// let el2=document.createElement("p")
+// let el3=document.createElement("p")
+// let el4=document.createElement("p")
+// let el5=document.createElement("p")
 
+// //   2
+// el1.innerText="one"
+// el2.innerText="two"
+// el3.innerText="three"
+// el4.innerText="four"
+// el5.innerText="five"
 
-//   1
-let el1=document.createElement("p")
-let el2=document.createElement("p")
-let el3=document.createElement("p")
-let el4=document.createElement("p")
-let el5=document.createElement("p")
+// //   3
+// el1.setAttribute("id", "one")
+// el2.setAttribute("class", "two")
+// el3.setAttribute("selc", "three")
+// el4.setAttribute("class", "four")
+// el5.setAttribute("id", "five")
 
-//   2
-el1.innerText="one"
-el2.innerText="two"
-el3.innerText="three"
-el4.innerText="four"
-el5.innerText="five"
+// clicker.insertAdjacentElement("afterend",el1)
+// clicker.insertAdjacentElement("afterend",el2)
+// clicker.insertAdjacentElement("afterend",el3)
+// clicker.insertAdjacentElement("afterend",el4)
+// clicker.insertAdjacentElement("afterend",el5)
 
-//   3
-el1.setAttribute("id", "one")
-el2.setAttribute("class", "two")
-el3.setAttribute("selc", "three")
-el4.setAttribute("class", "four")
-el5.setAttribute("id", "five")
+// document.getElementById("one").style.color="red";
+// document.getElementsByClassName("two")[0].style.color="blue"
+// document.querySelector('[selc="three"]').style.color="green"
+// document.getElementsByTagName("p")[1].style.color="yellow"
+// document.getElementById("five").style.color="gray";
 
+// //   4
+// let div1=document.createElement("div")
+// let div2=document.createElement("div")
+// let div3=document.createElement("div")
+// let div4=document.createElement("div")
+// let div5=document.createElement("div")
+// let div6=document.createElement("div")
 
-clicker.insertAdjacentElement("afterend",el1)
-clicker.insertAdjacentElement("afterend",el2)
-clicker.insertAdjacentElement("afterend",el3)
-clicker.insertAdjacentElement("afterend",el4)
-clicker.insertAdjacentElement("afterend",el5)
+// el1.insertAdjacentElement("afterend",div1)
+// el1.insertAdjacentElement("afterend",div2)
+// el1.insertAdjacentElement("afterend",div3)
+// el1.insertAdjacentElement("afterend",div4)
+// el1.insertAdjacentElement("afterend",div5)
+// el1.insertAdjacentElement("afterend",div6)
 
+// div1.style="width:100px;height:100px;background-color:red"
+// div2.style="width:100px;height:100px;background-color:blue"
+// div3.style="width:100px;height:100px;background-color:green"
+// div4.style="width:100px;height:100px;background-color:yellow"
+// div5.style="width:100px;height:100px;background-color:black"
+// div6.style="width:100px;height:100px;background-color:gray"
 
-document.getElementById("one").style.color="red";
-document.getElementsByClassName("two")[0].style.color="blue"
-document.querySelector('[selc="three"]').style.color="green"
-document.getElementsByTagName("p")[1].style.color="yellow"
-document.getElementById("five").style.color="gray";
+// //   5
+// let colorSwitch=document.createElement("button")
+// colorSwitch.innerText="SWITCH"
+// div1.insertAdjacentElement("afterend",colorSwitch)
 
-//   4
-let div1=document.createElement("div")
-let div2=document.createElement("div")
-let div3=document.createElement("div")
-let div4=document.createElement("div")
-let div5=document.createElement("div")
-let div6=document.createElement("div")
+// colorSwitch.addEventListener("click",()=>{
+//     function randomNum(){
+//         const rn = Math.floor(Math.random() * 255)
+//         return rn
+//     }
+//     div1.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+//     div2.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+//     div3.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+//     div4.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+//     div5.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
+//     div6.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
 
-el1.insertAdjacentElement("afterend",div1)
-el1.insertAdjacentElement("afterend",div2)
-el1.insertAdjacentElement("afterend",div3)
-el1.insertAdjacentElement("afterend",div4)
-el1.insertAdjacentElement("afterend",div5)
-el1.insertAdjacentElement("afterend",div6)
+// })
 
-div1.style="width:100px;height:100px;background-color:red"
-div2.style="width:100px;height:100px;background-color:blue"
-div3.style="width:100px;height:100px;background-color:green"
-div4.style="width:100px;height:100px;background-color:yellow"
-div5.style="width:100px;height:100px;background-color:black"
-div6.style="width:100px;height:100px;background-color:gray"
+// //   6
 
+// const masyvas = ["zodis","obuolys","remote","Apples","Red fox","Blue fox","Jester","Ace","Diamond","grass","Waterfall","Explosion","Christmas","numbers","Tractor","Trace","Build","Concrete","Windows","Snow","Hoodlum","Rocketship"]
 
-//   5
-let colorSwitch=document.createElement("button")
-colorSwitch.innerText="SWITCH"
-div1.insertAdjacentElement("afterend",colorSwitch)
-
-colorSwitch.addEventListener("click",()=>{
-    function randomNum(){
-        const rn = Math.floor(Math.random() * 255)
-        return rn
-    }
-    div1.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
-    div2.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
-    div3.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
-    div4.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
-    div5.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
-    div6.style=`width:100px;height:100px;background-color:rgb(${randomNum()},${randomNum()},${randomNum()})`
-
-})
-
-
-//   6
-
-const masyvas = ["zodis","obuolys","remote","Apples","Red fox","Blue fox","Jester","Ace","Diamond","grass","Waterfall","Explosion","Christmas","numbers","Tractor","Trace","Build","Concrete","Windows","Snow","Hoodlum","Rocketship"]
-
-
-for (let i=0;i<7;i++){
-    let pp=document.createElement("p")
-    function randWord(){
-        let saidWord=masyvas[Math.floor(Math.random() * masyvas.length)]
-        return saidWord
-    }
-    pp.innerText= `${randWord()}`
-    colorSwitch.insertAdjacentElement("afterend",pp)
-}
+// for (let i=0;i<7;i++){
+//     let pp=document.createElement("p")
+//     function randWord(){
+//         let saidWord=masyvas[Math.floor(Math.random() * masyvas.length)]
+//         return saidWord
+//     }
+//     pp.innerText= `${randWord()}`
+//     colorSwitch.insertAdjacentElement("afterend",pp)
+// }
 
 // let p1=document.createElement("p")
 // let p2=document.createElement("p")
@@ -351,115 +320,89 @@ for (let i=0;i<7;i++){
 //     document.getElementsByTagName("p")[i-1].innerText=
 // }
 
-
 //////////////////
 
+// console.log(document.getElementsByTagName("table"))
 
+// tableButton.addEventListener("click",()=>{
+//     document.getElementById("tableContainer").insertAdjacentElement("beforeend",(document.createElement("table")))
+//     for (let i=0;i<document.getElementById("rows").value;i++){
+//         document.getElementsByTagName("table")[0].appendChild(document.createElement("tr"))
+//     }
 
+//     for (let j=0;j<document.getElementById("rows").value;j++){
+//         for (let z=0;z<document.getElementById("colls").value;z++){
+//         document.getElementsByTagName("tr")[j].appendChild(document.createElement("td"))
+//         }
+//     }
 
+//     for (let x=0;x<document.querySelectorAll("td").length;x++){
+//         document.getElementsByTagName("td")[x].innerText="data"
+//         if (x%2==0){
+//             document.getElementsByTagName("td")[x].style="border:1px solid black;background-color:red"
+//         }
+//         else {
+//             document.getElementsByTagName("td")[x].style="border:1px solid black;background-color:green"
+//         }
+//     }
+//     document.getElementsByTagName("table")[0].style="border:1px solid black"
+// })
 
+// ////////////////////////
 
-console.log(document.getElementsByTagName("table"))
+// let gallery = document.getElementById("gala");
+// gallery.setAttribute("display", "flex");
+// gallery.style = "position:relative; padding: 3px; margin:5px;";
 
-tableButton.addEventListener("click",()=>{
-    document.getElementById("tableContainer").insertAdjacentElement("beforeend",(document.createElement("table")))
-    for (let i=0;i<document.getElementById("rows").value;i++){
-        document.getElementsByTagName("table")[0].appendChild(document.createElement("tr"))
-    }
+// let images = [];
+// let likes = [];
 
+// const imgLib = [
+//     // "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
+//     // "https://dubaitickets.tours/wp-content/uploads/2023/03/img-worlds-of-adventure-dubai-ticket-9-1.jpg",
+//     // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s",
+//     // "https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery",
+//     // "https://world-schools.com/wp-content/uploads/2023/01/IMG-Academy-cover-WS.webp",
+//     // "https://www.hollywoodreporter.com/wp-content/uploads/2012/12/img_logo_blue.jpg?w=1440&h=810&crop=1",
+//     // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxoPqQ0ai6pu6YUDIn4cbkLH5XduPwZq2hKg&s",
+//     // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeXoPJvCJcPL4MhitJzrSvJUSVxz5femYtw&s",
+//     // "https://www.arabiantourpackages.com/assets/images/tours/gallery/img-world-dubai-tickets-3.jpeg",
+//     // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MihrG6SuOD1aoln69boEKA2ogNHTonrWOw&s",
+//     // "https://cdn-icons-png.flaticon.com/512/8760/8760611.png"
+// ];
 
-    for (let j=0;j<document.getElementById("rows").value;j++){
-        for (let z=0;z<document.getElementById("colls").value;z++){
-        document.getElementsByTagName("tr")[j].appendChild(document.createElement("td"))
-        }
-    }
+// for (let i = 0; i < imgLib.length; i++) {
+//     let div = document.createElement("div");
+//     div.style = "width: min-content; display:inline-block;";
+//     gallery.appendChild(div);
 
+//     let img = document.createElement("img");
+//     img.src = imgLib[i];
+//     img.alt = "image like that";
+//     img.style = "height:10rem; width:15rem; border: solid black; padding:1px; margin:1px;";
+//     div.appendChild(img);
+//     images.push(img);
 
-    for (let x=0;x<document.querySelectorAll("td").length;x++){
-        document.getElementsByTagName("td")[x].innerText="data"
-        if (x%2==0){
-            document.getElementsByTagName("td")[x].style="border:1px solid black;background-color:red"
-        }
-        else {
-            document.getElementsByTagName("td")[x].style="border:1px solid black;background-color:green"
-        }
-    }
-    document.getElementsByTagName("table")[0].style="border:1px solid black"
-})
+//     let like = document.createElement("p");
+//     like.innerHTML = "&#9829;";
+//     like.style = "position:absolute; margin-left:5px; color:gray; font-size:30px; cursor:pointer;";
+//     like.addEventListener("click", () => {
+//         if (like.style.color === "gray") {
+//             like.style.color = "red";
+//             localStorage.setItem(`image #${i}`, img.src);
+//         } else {
+//             localStorage.removeItem(`image #${i}`);
+//             like.style.color = "gray";
+//         }
+//     });
 
+//     likes.push(like);
+//     img.insertAdjacentElement("beforebegin", like);
 
-
-
-////////////////////////
-
-
-let gallery = document.getElementById("gala");
-gallery.setAttribute("display", "flex");
-gallery.style = "position:relative; padding: 3px; margin:5px;";
-
-let images = [];
-let likes = [];
-
-const imgLib = [
-    // "https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
-    // "https://dubaitickets.tours/wp-content/uploads/2023/03/img-worlds-of-adventure-dubai-ticket-9-1.jpg",
-    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s",
-    // "https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery",
-    // "https://world-schools.com/wp-content/uploads/2023/01/IMG-Academy-cover-WS.webp",
-    // "https://www.hollywoodreporter.com/wp-content/uploads/2012/12/img_logo_blue.jpg?w=1440&h=810&crop=1",
-    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxoPqQ0ai6pu6YUDIn4cbkLH5XduPwZq2hKg&s",
-    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeXoPJvCJcPL4MhitJzrSvJUSVxz5femYtw&s",
-    // "https://www.arabiantourpackages.com/assets/images/tours/gallery/img-world-dubai-tickets-3.jpeg",
-    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MihrG6SuOD1aoln69boEKA2ogNHTonrWOw&s",
-    // "https://cdn-icons-png.flaticon.com/512/8760/8760611.png"
-];
-
-
-for (let i = 0; i < imgLib.length; i++) {
-    let div = document.createElement("div");
-    div.style = "width: min-content; display:inline-block;";
-    gallery.appendChild(div);
-
-    let img = document.createElement("img");
-    img.src = imgLib[i];
-    img.alt = "image like that";
-    img.style = "height:10rem; width:15rem; border: solid black; padding:1px; margin:1px;";
-    div.appendChild(img);
-    images.push(img);
-
-
-    let like = document.createElement("p");
-    like.innerHTML = "&#9829;";
-    like.style = "position:absolute; margin-left:5px; color:gray; font-size:30px; cursor:pointer;";
-    like.addEventListener("click", () => {
-        if (like.style.color === "gray") {
-            like.style.color = "red";
-            localStorage.setItem(`image #${i}`, img.src);
-        } else {
-            localStorage.removeItem(`image #${i}`);
-            like.style.color = "gray";
-        }
-    });
-
-    likes.push(like);
-    img.insertAdjacentElement("beforebegin", like);
-
-    if (localStorage.getItem(`image #${i}`)) {
-        like.style.color = "red";
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
+//     if (localStorage.getItem(`image #${i}`)) {
+//         like.style.color = "red";
+//     }
+// }
 
 // let gallery = document.getElementById("gala")
 // gallery.setAttribute("display","flex")
@@ -468,14 +411,11 @@ for (let i = 0; i < imgLib.length; i++) {
 // let symbol = document.createElement("p")
 // symbol.innerHTML="&#9829;"
 
-
-
 // for (let i=0;i<=10;i++){
 //     gallery.appendChild(document.createElement("div"))
 //     gallery.getElementsByTagName("div")[i].appendChild(document.createElement("img"))
 //     gallery.getElementsByTagName("div")[i].style="width: min-content; display:inline-block;"
 // }
-
 
 // const imgLib = ["https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg",
 //     "https://dubaitickets.tours/wp-content/uploads/2023/03/img-worlds-of-adventure-dubai-ticket-9-1.jpg",
@@ -489,13 +429,11 @@ for (let i = 0; i < imgLib.length; i++) {
 //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MihrG6SuOD1aoln69boEKA2ogNHTonrWOw&s",
 //     "https://cdn-icons-png.flaticon.com/512/8760/8760611.png"];
 
-
 // for (let i=0;i<document.images.length;i++){
 //     document.images[i].setAttribute("src",`${imgLib[i]}`)
 //     document.images[i].setAttribute("alt","image like that")
 //     document.images[i].style="height:200px; width:300px;  border: solid black; padding:1px; margin:1px;"
 // }
-
 
 // for (let i=0;i<document.images.length;i++){
 //     document.images[i].insertAdjacentElement("beforebegin",document.createElement("p"))
@@ -516,264 +454,288 @@ for (let i = 0; i < imgLib.length; i++) {
 //     }
 // }
 
-
-
-
 //////////////////////////////////////////
 
+const projectContainer = document.getElementById("page");
 
+let productArray = [];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let productArray = []
-
-function updateProductArray(){
-    if (JSON.parse(localStorage.getItem("Products"))==null){
-        productArray = []
-    }
-    else {
-        productArray = JSON.parse(localStorage.getItem("Products"))
-    }
+function updateProductArray() {
+  if (JSON.parse(localStorage.getItem("Products")) == null) {
+    productArray = [];
+  } else {
+    productArray = JSON.parse(localStorage.getItem("Products"));
+  }
 }
-updateProductArray()
-console.log(productArray)
+updateProductArray();
+console.log(productArray);
 
-function updateLocalStorage(){
-    localStorage.setItem("Products",JSON.stringify(productArray))
+function updateLocalStorage() {
+  localStorage.setItem("Products", JSON.stringify(productArray));
 }
 
 // make form
-const form = document.createElement("form")
-form.style = "display:flex;"
-gallery.insertAdjacentElement("afterend", form)
+const form = document.createElement("form");
+form.style = "display:flex;";
+projectContainer.append(form);
 
 // fieldset in form
-const formFieldset = document.createElement("fieldset")
-formFieldset.style = "width:40%;"
-form.appendChild(formFieldset)
+const formFieldset = document.createElement("fieldset");
+formFieldset.style = "width:40%;";
+form.appendChild(formFieldset);
 
 // containers for inputs and labels
-const productIdContainer = document.createElement("div")
-productIdContainer.style = "width: 100%;"
-formFieldset.appendChild(productIdContainer)
+const productIdContainer = document.createElement("div");
+productIdContainer.style = "width: 100%;";
+formFieldset.appendChild(productIdContainer);
 
-const productNameContainer = document.createElement("div")
-productNameContainer.style = "width: 100%;"
-formFieldset.appendChild(productNameContainer)
+const productNameContainer = document.createElement("div");
+productNameContainer.style = "width: 100%;";
+formFieldset.appendChild(productNameContainer);
 
-const productQuantityContainer = document.createElement("div")
-productQuantityContainer.style = "width: 100%;"
-formFieldset.appendChild(productQuantityContainer)
-
-
-
+const productQuantityContainer = document.createElement("div");
+productQuantityContainer.style = "width: 100%;";
+formFieldset.appendChild(productQuantityContainer);
 
 ////// Functions
-let productList = document.getElementById("product-list")
-productList = document.createElement("ul");
+let productList = document.getElementById("product-list");
+productList = document.createElement("table");
 productList.setAttribute("id", "product-list");
-formFieldset.insertAdjacentElement("beforeend",productList);
-
+formFieldset.insertAdjacentElement("beforeend", productList);
+productList.style = "width:100%;";
 
 // web product list display
 function displayProducts() {
-    const products = JSON.parse(localStorage.getItem("Products")) || [];
-    let productList = document.getElementById("product-list");
+  const products = JSON.parse(localStorage.getItem("Products")) || [];
+  let productList = document.getElementById("product-list");
 
-    // Clear list
-    productList.innerHTML = "";
-    // Fill list
-    products.forEach(product => {
-        const item = document.createElement("li");
-        item.textContent = `ID: ${product.id}, Name: ${product.name}, Quantity: ${product.quantity}`;
-        productList.appendChild(item);
-    });
+  // Clear list
+  productList.innerHTML = "";
+  // Fill list
+  const productDisplayHeadRow = document.createElement("tr");
+  productList.appendChild(productDisplayHeadRow);
+  for (let i = 0; i <= 2; i++) {
+    productDisplayHeadRow.appendChild(document.createElement("th"));
+  }
+  productDisplayHeadRow.getElementsByTagName("th")[0].innerHTML = "ID";
+  productDisplayHeadRow.getElementsByTagName("th")[1].innerHTML = "Name";
+  productDisplayHeadRow.getElementsByTagName("th")[2].innerHTML = "Quantity";
+
+  products.forEach((product) => {
+    const selector = [
+      `${product.id}`,
+      `${product.name}`,
+      `${product.quantity}`,
+    ];
+    const productListRow = document.createElement("tr");
+    productList.appendChild(productListRow);
+    for (let i = 0; i < 3; i++) {
+      const item = document.createElement("td");
+      item.style = "text-align:center;";
+      item.textContent = `${selector[i]}`;
+      productListRow.appendChild(item);
+    }
+  });
 }
-displayProducts()
+displayProducts();
 
-///// buttons
-
-function checkDuplicate(idCheck){
-    for (let i in JSON.parse(localStorage.getItem("Products"))){
-        console.log(JSON.parse(localStorage.getItem("Products"))[i].id==idCheck)
-        console.log(JSON.parse(localStorage.getItem("Products"))[i].id)
-        console.log(idCheck)
-        if (JSON.parse(localStorage.getItem("Products"))[i].id==idCheck)return true
-        
-    }
-    return false
+function checkDuplicate(idCheck) {
+  for (let i in JSON.parse(localStorage.getItem("Products"))) {
+    if (JSON.parse(localStorage.getItem("Products"))[i].id == idCheck)
+      return true;
+  }
+  return false;
 }
 
+///////////////////////////// buttons
 
-// add product to array if all inputs are valid
-const addButton = document.createElement("button")
-addButton.innerHTML = "Add new item"
+//// Add button
+const addButton = document.createElement("button");
+addButton.innerHTML = "Add new item";
 
-addButton.addEventListener("click",(e)=>{
-    e.preventDefault()
+addButton.addEventListener("click", (e) => {
+  e.preventDefault();
 
-    if (!productIdInput.value.trim() || !productNameInput.value.trim() || !productQuantityInput.value.trim() || productQuantityInput.value.trim() <= 0 || productIdInput.value <=0 ){
-        alert("Please enter valid inputs.");
-        return;
-    }
+  if (
+    !productIdInput.value.trim() ||
+    !productNameInput.value.trim() ||
+    !productQuantityInput.value.trim() ||
+    productQuantityInput.value.trim() <= 0 ||
+    productIdInput.value <= 0
+  ) {
+    alert("Please enter valid inputs.");
+    return;
+  }
 
-    if (!checkDuplicate(productIdInput.value)){
-        const newItem = {id:`${productIdInput.value}`, name:`${productNameInput.value}`, quantity:`${productQuantityInput.value}`}
-        console.log(newItem)
-        productArray.push(newItem)
-        updateLocalStorage()
-        updateProductArray()
-        displayProducts();
-    }
-    else alert("Id already exists")
-})
+  if (!checkDuplicate(productIdInput.value)) {
+    const newItem = {
+      id: `${productIdInput.value}`,
+      name: `${productNameInput.value}`,
+      quantity: `${productQuantityInput.value}`,
+    };
+    console.log(newItem);
+    productArray.push(newItem);
+    updateLocalStorage();
+    updateProductArray();
+    displayProducts();
+  } else alert("Id already exists");
+});
 
-const editButton = document.createElement("button")
-editButton.innerHTML = "Edit existing item"
+//// Edit button
+const editButton = document.createElement("button");
+editButton.innerHTML = "Edit existing item";
 
 editButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const id = productIdInput.value.trim();
-    const name = productNameInput.value.trim();
-    const quantity = productQuantityInput.value.trim();
+  e.preventDefault();
+  const id = productIdInput.value.trim();
+  const name = productNameInput.value.trim();
+  const quantity = productQuantityInput.value.trim();
 
-    const products = JSON.parse(localStorage.getItem("Products")) || [];
-    const productIndex = products.findIndex(product => product.id == id);
+  const products = JSON.parse(localStorage.getItem("Products")) || [];
+  const productIndex = products.findIndex((product) => product.id == id);
 
-    if (productIndex > -1) {
-        products[productIndex] = { id, name, quantity: parseInt(quantity, 10) };
-        localStorage.setItem("Products", JSON.stringify(products));
-        displayProducts();
-        alert("Product updated successfully!");
-    } else {
-        alert("Product not found.");
-    }
+  if (productIndex > -1) {
+    products[productIndex] = { id, name, quantity: parseInt(quantity, 10) };
+    localStorage.setItem("Products", JSON.stringify(products));
+    displayProducts();
+    alert("Product updated successfully!");
+  } else {
+    alert("Product not found.");
+  }
 });
 
-
-const removeButton = document.createElement("button")
-removeButton.innerHTML = "Remove existing item"
+//// REmove button
+const removeButton = document.createElement("button");
+removeButton.innerHTML = "Remove existing item";
 
 removeButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const id = productIdInput.value;
+  e.preventDefault();
+  const id = productIdInput.value;
 
-    const products = JSON.parse(localStorage.getItem("Products")) || [];
-    const updatedProducts = products.filter(product => product.id != id);
-    
+  const products = JSON.parse(localStorage.getItem("Products")) || [];
+  const updatedProducts = products.filter((product) => product.id != id);
 
-    if (products.length !== updatedProducts.length) {
-        localStorage.setItem("Products", JSON.stringify(updatedProducts));
-        productArray = updatedProducts
-        alert("Product removed successfully!");
-        displayProducts();
-        updateProductArray()
-    } else {
-        alert("Product not found.");
+  if (products.length !== updatedProducts.length) {
+    localStorage.setItem("Products", JSON.stringify(updatedProducts));
+    productArray = updatedProducts;
+    alert("Product removed successfully!");
+    displayProducts();
+    updateProductArray();
+    while (productIdInput.value) {
+      console.log("REMOVE");
+      const elToRemove = document.getElementById(`${productIdInput.value}`);
+      elToRemove.remove();
     }
-    console.log(productArray)
-    console.log(updatedProducts)
+  } else {
+    alert("Product not found.");
+  }
 });
 
-
 // button container
-const ButtonContainer = document.createElement("div")
-ButtonContainer.style="display:flex; justify-content: space-between; padding: 1%;"
-form.getElementsByTagName("ul")[0].insertAdjacentElement("beforebegin",ButtonContainer)
-ButtonContainer.appendChild(addButton)
-ButtonContainer.appendChild(editButton)
-ButtonContainer.appendChild(removeButton)
+const ButtonContainer = document.createElement("div");
+ButtonContainer.style =
+  "display:flex; justify-content: space-between; padding: 1%;";
+form
+  .getElementsByTagName("table")[0]
+  .insertAdjacentElement("beforebegin", ButtonContainer);
+ButtonContainer.appendChild(addButton);
+ButtonContainer.appendChild(editButton);
+ButtonContainer.appendChild(removeButton);
 
 /// ID
-const productIdLabel = document.createElement("label")
-productIdLabel.setAttribute("for","productIdInput")
-productIdLabel.innerHTML = "Product id"
-productIdContainer.appendChild(productIdLabel)
+const productIdLabel = document.createElement("label");
+productIdLabel.setAttribute("for", "productIdInput");
+productIdLabel.innerHTML = "Product id";
+productIdContainer.appendChild(productIdLabel);
 
-const productIdInput = document.createElement("input")
-productIdInput.setAttribute("type","number")
-productIdInput.setAttribute("id","productIdInput")
-productIdInput.required = true
-productIdInput.style = "width: 100%;"
-productIdContainer.appendChild(productIdInput)
+const productIdInput = document.createElement("input");
+productIdInput.setAttribute("type", "number");
+productIdInput.setAttribute("id", "productIdInput");
+productIdInput.required = true;
+productIdInput.style = "width: 100%;";
+productIdContainer.appendChild(productIdInput);
 /// NAME
-const productNameLabel = document.createElement("label")
-productNameLabel.innerHTML = "Product name"
-productNameLabel.setAttribute("for","productNameInput")
-productNameContainer.appendChild(productNameLabel)
+const productNameLabel = document.createElement("label");
+productNameLabel.innerHTML = "Product name";
+productNameLabel.setAttribute("for", "productNameInput");
+productNameContainer.appendChild(productNameLabel);
 
-const productNameInput = document.createElement("input")
-productNameInput.setAttribute("type","text")
-productNameInput.setAttribute("id","productNameInput")
-productNameInput.required = true
-productNameInput.style = "width: 100%;"
-productNameContainer.appendChild(productNameInput)
+const productNameInput = document.createElement("input");
+productNameInput.setAttribute("type", "text");
+productNameInput.setAttribute("id", "productNameInput");
+productNameInput.required = true;
+productNameInput.style = "width: 100%;";
+productNameContainer.appendChild(productNameInput);
 /// QUANTITY
-const productQuantityLabel = document.createElement("label")
-productQuantityLabel.setAttribute("for","productQuantityInput")
-productQuantityLabel.innerHTML = "Product Quantity"
-productQuantityContainer.appendChild(productQuantityLabel)
+const productQuantityLabel = document.createElement("label");
+productQuantityLabel.setAttribute("for", "productQuantityInput");
+productQuantityLabel.innerHTML = "Product Quantity";
+productQuantityContainer.appendChild(productQuantityLabel);
 
-const productQuantityInput = document.createElement("input")
-productQuantityInput.setAttribute("type","number")
-productQuantityInput.setAttribute("id","productQuantityInput")
-productQuantityInput.required = true
-productQuantityInput.style = "width: 100%;"
-productQuantityContainer.appendChild(productQuantityInput)
+const productQuantityInput = document.createElement("input");
+productQuantityInput.setAttribute("type", "number");
+productQuantityInput.setAttribute("id", "productQuantityInput");
+productQuantityInput.required = true;
+productQuantityInput.style = "width: 100%;";
+productQuantityContainer.appendChild(productQuantityInput);
 
-const productFindFieldset = document.createElement("fieldset")
-productFindFieldset.style="width:40%;"
-form.appendChild(productFindFieldset)
+/////  product Find field
+const productFindFieldset = document.createElement("fieldset");
+productFindFieldset.style = "width:40%;";
+form.appendChild(productFindFieldset);
 
-const productFindLabel = document.createElement("label")
-productFindLabel.setAttribute("for","productFindInput")
-productFindLabel.innerHTML="Find product by ID"
-productFindLabel.style="display:block;"
+const productFindLabel = document.createElement("label");
+productFindLabel.setAttribute("for", "productFindInput");
+productFindLabel.innerHTML = "Find product by ID";
+productFindLabel.style = "display:block;";
 
-const productFindInput = document.createElement("input")
-productFindInput.setAttribute("type","number")
-productFindInput.setAttribute("id","productFindInput")
-productFindInput.required = true
+const productFindInput = document.createElement("input");
+productFindInput.setAttribute("type", "number");
+productFindInput.setAttribute("id", "productFindInput");
+productFindInput.required = true;
 
+const productFindButton = document.createElement("button");
+productFindButton.innerHTML = "Search";
 
+productFindFieldset.append(
+  productFindLabel,
+  productFindInput,
+  productFindButton
+);
 
-const productFindButton = document.createElement("button")
-productFindButton.innerHTML="Search"
+const productFindTable = document.createElement("table");
+const productFindTableRow = document.createElement("tr");
+productFindFieldset.appendChild(productFindTable);
+productFindTable.appendChild(productFindTableRow);
 
-productFindFieldset.append(productFindLabel,productFindInput,productFindButton)
+for (let i = 0; i <= 2; i++) {
+  productFindTableRow.append(document.createElement("th"));
+  productFindTableRow.getElementsByTagName("th")[i].style = "border:1px solid;";
+}
 
-const productFindTable = document.createElement("table")
+productFindTableRow.getElementsByTagName("th")[0].innerHTML = "Product ID";
+productFindTableRow.getElementsByTagName("th")[1].innerHTML = "Product Name";
+productFindTableRow.getElementsByTagName("th")[2].innerHTML = "Product Quantity";
 
-let prodFindEnable = false
+// add product info to find table
 productFindButton.addEventListener("click", (e) => {
-    e.preventDefault()
-    if (!prodFindEnable){
-        const productFindTableRow = document.createElement("tr")
-        const productFindTableRowData = document.createElement("td")
-        productFindTableRow.appendChild(productFindTableRowData)
+  e.preventDefault();
+  displayProducts();
+  updateProductArray();
+  if (checkDuplicate(productFindInput.value)) {
+    const foundItemTR = document.createElement("tr");
+    productFindTable.appendChild(foundItemTR);
+    foundItemTR.setAttribute("id", `${productFindInput.value}`);
+    console.log(document.getElementById(`${productIdInput.value}`));
 
+    for (let z = 0; z < productArray.length; z++) {
+      if (productArray[z].id == productFindInput.value) {
+        Object.entries(productArray[z]).forEach(([key, val]) => {
+          const foundItemTD = document.createElement("td");
+          foundItemTD.innerHTML = `${val}`;
+          foundItemTR.appendChild(foundItemTD);
+        });
+      }
     }
-
-    
-})
+  } else alert("No such item");
+});
