@@ -1,5 +1,8 @@
 'use strict';
 
+const body = document.querySelector('body')
+body.style = 'background:black; color: white; font-family: monospace;'
+
 const projectContainer = document.getElementById("page");
 
 let productArray = [];
@@ -103,10 +106,10 @@ addButton.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (
-    !productIdInput.value.trim() ||
-    !productNameInput.value.trim() ||
-    !productQuantityInput.value.trim() ||
-    productQuantityInput.value.trim() <= 0 ||
+    !productIdInput.value ||
+    !productNameInput.value ||
+    !productQuantityInput.value ||
+    productQuantityInput.value <= 0 ||
     productIdInput.value <= 0
   ) {
     alert("Please enter valid inputs.");
@@ -133,9 +136,9 @@ editButton.innerHTML = "Edit existing item";
 
 editButton.addEventListener("click", (e) => {
   e.preventDefault();
-  const id = productIdInput.value.trim();
-  const name = productNameInput.value.trim();
-  const quantity = productQuantityInput.value.trim();
+  const id = productIdInput.value;
+  const name = productNameInput.value;
+  const quantity = productQuantityInput.value;
 
   const products = JSON.parse(localStorage.getItem("Products")) || [];
   const productIndex = products.findIndex((product) => product.id == id);
@@ -144,7 +147,20 @@ editButton.addEventListener("click", (e) => {
     products[productIndex] = { id, name, quantity: parseInt(quantity, 10) };
     localStorage.setItem("Products", JSON.stringify(products));
     displayProducts();
+    console.log(document.getElementById(`${id}`))
     alert("Product updated successfully!");
+    if (checkFinder(productIdInput)){
+      console.log("REPEAT")
+      for (let i=1;i<productFindTable.getElementsByTagName('tr').length;i++){
+        console.log(productFindTable.getElementsByTagName('tr').length)
+        if (productFindTable.getElementsByTagName('tr')[i].id==productIdInput.value){
+          const chEl = productFindTable.getElementsByTagName('tr')[i]
+          chEl.getElementsByTagName('td')[1].innerText = `${productNameInput.value}`
+          chEl.getElementsByTagName('td')[2].innerText = `${productQuantityInput.value}`
+        }
+      }
+      
+    }
   } else {
     alert("Product not found.");
   }
@@ -263,16 +279,28 @@ productFindTableRow.getElementsByTagName("th")[0].innerHTML = "Product ID";
 productFindTableRow.getElementsByTagName("th")[1].innerHTML = "Product Name";
 productFindTableRow.getElementsByTagName("th")[2].innerHTML = "Product Quantity";
 
+
+// function to check for found product duplicates
+function checkFinder(id){
+  for (let i=1;i<productFindTable.getElementsByTagName('tr').length;i++){
+    console.log(productFindTable.getElementsByTagName('tr').length)
+    if (productFindTable.getElementsByTagName('tr')[i].id==productFindInput.value){
+      return true
+    }
+  }
+}
+
 // add product info to find table
 productFindButton.addEventListener("click", (e) => {
   e.preventDefault();
   displayProducts();
   updateProductArray();
-  if (checkDuplicate(productFindInput.value)) {
+
+  if (checkDuplicate(productFindInput.value) && !checkFinder(productFindInput.value)){
+
     const foundItemTR = document.createElement("tr");
     productFindTable.appendChild(foundItemTR);
     foundItemTR.setAttribute("id", `${productFindInput.value}`);
-    console.log(document.getElementById(`${productIdInput.value}`));
 
     for (let z = 0; z < productArray.length; z++) {
       if (productArray[z].id == productFindInput.value) {
