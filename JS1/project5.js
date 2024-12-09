@@ -28,7 +28,7 @@ projectContainer.append(form);
 
 // fieldset in form
 const formFieldset = document.createElement("fieldset");
-formFieldset.style = "width:40%;";
+formFieldset.style = "width:50%;";
 form.appendChild(formFieldset);
 
 // containers for inputs and labels
@@ -243,7 +243,7 @@ productQuantityContainer.appendChild(productQuantityInput);
 
 /////  product Find field
 const productFindFieldset = document.createElement("fieldset");
-productFindFieldset.style = "width:40%;";
+productFindFieldset.style = "width:50%;";
 form.appendChild(productFindFieldset);
 
 const productFindLabel = document.createElement("label");
