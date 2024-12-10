@@ -15,7 +15,7 @@ function updateProductArray() {
   }
 }
 updateProductArray();
-console.log(productArray);
+
 
 function updateLocalStorage() {
   localStorage.setItem("Products", JSON.stringify(productArray));
@@ -311,5 +311,5 @@ productFindButton.addEventListener("click", (e) => {
         });
       }
     }
-  } else alert("No such item");
+  } else alert("No");
 });
