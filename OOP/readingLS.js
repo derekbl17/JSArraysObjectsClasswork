@@ -26,34 +26,44 @@ class Reader {
     this._paimta_knyga.push(newBook);
   }
 }
+const lsArray = JSON.parse(localStorage.getItem("readers")) || [];
 
+console.log(lsArray);
 const formSubmit = document.getElementById("formSubButton");
 const firstNameVal = document.getElementById("firstName");
 const lastNameVal = document.getElementById("lastName");
 const cardNrVal = document.getElementById("cardNr");
 const bookNameVal = document.getElementById("bookName");
-const inputArray = ["firstName", "lastName", "cardNr", "bookName"];
 const tableBody = document.getElementById("tBody");
-const commandArray = ["firstName", "lastName()", "cardNr()", "bookName()"];
 const cardNrArray = [];
-const people = [];
+
+const people = JSON.parse(localStorage.getItem("readers")) || [];
+console.log(people);
+for (let i = 0; i < people.length; i++) {
+  if (people[i]) {
+    cardNrArray.push(i);
+  }
+}
+console.log(cardNrArray);
+console.log(cardNrArray.includes(3));
 formSubmit.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(cardNrArray);
+  console.log(document.getElementsByTagName("input"));
   if (
     (firstNameVal.value, lastNameVal.value, cardNrVal.value, bookNameVal.value)
   ) {
-    if (cardNrArray.includes(cardNrVal.value)) {
+    if (cardNrArray.includes(+cardNrVal.value)) {
       if (people[cardNrVal.value].bookName.includes(bookNameVal.value)) {
         alert("Knyga jau irasyta!");
       } else {
+        console.log(people[people.indexOf(cardNrVal.value)]);
+        console.log("includes");
         const insertTo = document.getElementById(cardNrVal.value);
         people[cardNrVal.value].addBook(bookNameVal.value);
         const insertOption = document.createElement("option");
         insertOption.innerText = bookNameVal.value;
         insertTo.append(insertOption);
         people[cardNrVal.value].printInfo();
-        alert("Knyga prideta");
       }
     } else {
       people[cardNrVal.value] = new Reader(
@@ -62,6 +72,9 @@ formSubmit.addEventListener("click", (e) => {
         cardNrVal.value,
         bookNameVal.value
       );
+      //
+      localStorage.setItem("readers", JSON.stringify(people));
+      //
       people[cardNrVal.value].printInfo();
       cardNrArray.push(cardNrVal.value);
       let tableRow = document.createElement("tr");
@@ -87,18 +100,24 @@ formSubmit.addEventListener("click", (e) => {
       tableRow.append(tdRm);
       alert("Vartotojas sekmingai sukurtas");
       tdRm.addEventListener("click", (e) => {
-        console.log(cardNrArray);
         e.preventDefault();
         const target = document.getElementById(`${trId}`);
         target.remove();
+        console.log(cardNrArray.indexOf(cardNrVal.value));
         cardNrArray.splice(cardNrArray.indexOf(cardNrVal.value), 1);
-        alert("Vartotojas panaikintas");
+        console.log(cardNrArray.indexOf(cardNrVal.value));
       });
-      //   for (let i = 0; i < document.getElementsByTagName("input").length; i++) {
-      //     document.getElementsByTagName("input")[i].value = "";
-      //   }
+      for (let i = 0; i < document.getElementsByTagName("input").length; i++) {
+        document.getElementsByTagName("input")[i].value = "";
+      }
     }
   } else {
     alert("Klaidingas ivedimas");
+    console.log(
+      firstNameVal.value,
+      lastNameVal.value,
+      cardNrVal.value,
+      bookNameVal.value
+    );
   }
 });
