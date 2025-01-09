@@ -91,7 +91,7 @@ formSubmit.addEventListener("click", (e) => {
         e.preventDefault();
         const target = document.getElementById(`${trId}`);
         target.remove();
-        cardNrArray.splice(cardNrArray.indexOf(cardNrVal.value), 1);
+        cardNrArray.splice(cardNrArray.indexOf(bookNameTdSelect.id), 1);
         alert("Vartotojas panaikintas");
       });
       //   for (let i = 0; i < document.getElementsByTagName("input").length; i++) {
