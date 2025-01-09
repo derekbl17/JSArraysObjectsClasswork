@@ -29,7 +29,9 @@ class Birds extends Animal {
 const catBtn = document.getElementById("cat");
 const catSubBtn = document.getElementById("submitCat");
 const fishBtn = document.getElementById("fish");
+const fishSubBtn = document.getElementById("submitFish");
 const birdBtn = document.getElementById("bird");
+const birdSubBtn = document.getElementById("submitBird");
 const addedArea = document.getElementById("added");
 const addedArray = [];
 let cnt = 0;
@@ -44,19 +46,19 @@ function addCat() {
 }
 function addFish() {
   addedArray[cnt] = new Fish(
-    document.getElementById("catName").value,
-    document.getElementById("catAge").value,
-    document.getElementById("furColor").value,
-    document.getElementById("furType").value
+    document.getElementById("nameF").value,
+    document.getElementById("ageF").value,
+    document.getElementById("scaleColor").value,
+    document.getElementById("weight").value
   );
   cnt++;
 }
 function addBird() {
   addedArray[cnt] = new Birds(
-    document.getElementById("catName").value,
-    document.getElementById("catAge").value,
-    document.getElementById("furColor").value,
-    document.getElementById("furType").value
+    document.getElementById("nameB").value,
+    document.getElementById("ageB").value,
+    document.getElementById("featherColor").value,
+    document.getElementById("beakType").value
   );
   cnt++;
 }
