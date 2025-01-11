@@ -35,15 +35,20 @@ const birdSubBtn = document.getElementById("submitBird");
 const addedArea = document.getElementById("added");
 const addedArray = [];
 let cnt = 0;
+
 function addCat() {
-  addedArray[cnt] = new Cats(
-    document.getElementById("catName").value,
-    document.getElementById("catAge").value,
-    document.getElementById("furColor").value,
-    document.getElementById("furType").value
-  );
-  cnt++;
+  const cName=document.getElementById("catName").value
+  const cAge=document.getElementById("catAge").value
+  const furC=document.getElementById("furColor").value
+  const furT=document.getElementById("furType").value
+  if (cName,cAge,furC,furT){
+      addedArray[cnt] = new Cats(cName,cAge,furC,furT);
+  displayAnimal()
+  cnt++;}
+  else alert("invalid input")
+  
 }
+// change all add functions to work like addCat()
 function addFish() {
   addedArray[cnt] = new Fish(
     document.getElementById("nameF").value,
@@ -51,6 +56,7 @@ function addFish() {
     document.getElementById("scaleColor").value,
     document.getElementById("weight").value
   );
+  displayAnimal()
   cnt++;
 }
 function addBird() {
@@ -60,6 +66,7 @@ function addBird() {
     document.getElementById("featherColor").value,
     document.getElementById("beakType").value
   );
+  displayAnimal()
   cnt++;
 }
 window.addEventListener("load", (e) => {
@@ -80,6 +87,7 @@ catSubBtn.addEventListener("click", (e) => {
   addCat();
   console.log(addedArray);
 });
+
 fishBtn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("Zzz");
@@ -87,10 +95,30 @@ fishBtn.addEventListener("click", (e) => {
   document.getElementById("birdField").style = "display:none;";
   document.getElementById("catField").style = "display:none;";
 });
+
+fishSubBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  addFish()
+})
+
 birdBtn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("Zzz");
+  addBird()
   document.getElementById("fishField").style = "display:none;";
   document.getElementById("birdField").style = "display:block;";
   document.getElementById("catField").style = "display:none;";
 });
+
+birdSubBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  addBird()
+});
+
+function displayAnimal(){
+    for (let k in addedArray[cnt]){
+      const form = document.createElement('form')
+      form.append(document.createElement('p').innerText=`${k}: ${addedArray[cnt][k]}`)
+      addedArea.append(form)
+    }
+  }
