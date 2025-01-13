@@ -37,37 +37,38 @@ const addedArray = [];
 let cnt = 0;
 
 function addCat() {
-  const cName=document.getElementById("catName").value
-  const cAge=document.getElementById("catAge").value
-  const furC=document.getElementById("furColor").value
-  const furT=document.getElementById("furType").value
-  if (cName,cAge,furC,furT){
-      addedArray[cnt] = new Cats(cName,cAge,furC,furT);
-  displayAnimal()
-  cnt++;}
-  else alert("invalid input")
-  
+  const cName = document.getElementById("catName").value;
+  const cAge = document.getElementById("catAge").value;
+  const furC = document.getElementById("furColor").value;
+  const furT = document.getElementById("furType").value;
+  if ((cName, cAge, furC, furT)) {
+    addedArray[cnt] = new Cats(cName, cAge, furC, furT);
+    displayAnimal();
+    cnt++;
+  } else alert("invalid input");
 }
-// change all add functions to work like addCat()
+
 function addFish() {
-  addedArray[cnt] = new Fish(
-    document.getElementById("nameF").value,
-    document.getElementById("ageF").value,
-    document.getElementById("scaleColor").value,
-    document.getElementById("weight").value
-  );
-  displayAnimal()
-  cnt++;
+  const fName = document.getElementById("nameF").value;
+  const fAge = document.getElementById("ageF").value;
+  const fScaleColor = document.getElementById("scaleColor").value;
+  const fWeight = document.getElementById("weight").value;
+  if ((fName, fAge, fScaleColor, fWeight)) {
+    addedArray[cnt] = new Fish(fName, fAge, fScaleColor, fWeight);
+    displayAnimal();
+    cnt++;
+  } else alert("invalid input");
 }
 function addBird() {
-  addedArray[cnt] = new Birds(
-    document.getElementById("nameB").value,
-    document.getElementById("ageB").value,
-    document.getElementById("featherColor").value,
-    document.getElementById("beakType").value
-  );
-  displayAnimal()
-  cnt++;
+  const bName = document.getElementById("nameB").value;
+  const bAge = document.getElementById("ageB").value;
+  const bFeatherColor = document.getElementById("featherColor").value;
+  const bBeakType = document.getElementById("beakType").value;
+  if ((bName, bAge, bFeatherColor, bBeakType)) {
+    addedArray[cnt] = new Birds(bName, bAge, bFeatherColor, bBeakType);
+    displayAnimal();
+    cnt++;
+  } else alert("invalid input");
 }
 window.addEventListener("load", (e) => {
   catBtn.click();
@@ -98,13 +99,12 @@ fishBtn.addEventListener("click", (e) => {
 
 fishSubBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  addFish()
-})
+  addFish();
+});
 
 birdBtn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("Zzz");
-  addBird()
   document.getElementById("fishField").style = "display:none;";
   document.getElementById("birdField").style = "display:block;";
   document.getElementById("catField").style = "display:none;";
@@ -112,13 +112,16 @@ birdBtn.addEventListener("click", (e) => {
 
 birdSubBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  addBird()
+  addBird();
 });
 
-function displayAnimal(){
-    for (let k in addedArray[cnt]){
-      const form = document.createElement('form')
-      form.append(document.createElement('p').innerText=`${k}: ${addedArray[cnt][k]}`)
-      addedArea.append(form)
-    }
+function displayAnimal() {
+  const form = document.createElement("form");
+  form.id = "addedForm";
+  for (let k in addedArray[cnt]) {
+    const pEl = document.createElement("p");
+    pEl.innerText = `${k}: ${addedArray[cnt][k]}`;
+    form.append(pEl);
   }
+  addedArea.append(form);
+}
