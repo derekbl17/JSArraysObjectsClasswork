@@ -136,7 +136,7 @@ birdSubBtn.addEventListener("click", (e) => {
   addBird();
 });
 
-// add to section last submitted animal
+// add to section last submitted animal, update LS
 function displayAnimal(param = 0) {
   const form = document.createElement("form");
   form.id = "addedForm";
