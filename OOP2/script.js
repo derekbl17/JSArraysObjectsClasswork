@@ -45,6 +45,10 @@ function addCat() {
     addedArray[cnt] = new Cats(cName, cAge, furC, furT);
     displayAnimal();
     cnt++;
+    document.getElementById("catName").value = "";
+    document.getElementById("catAge").value = "";
+    document.getElementById("furColor").value = "";
+    document.getElementById("furType").value = "";
   } else alert("invalid input");
 }
 
@@ -57,6 +61,10 @@ function addFish() {
     addedArray[cnt] = new Fish(fName, fAge, fScaleColor, fWeight);
     displayAnimal();
     cnt++;
+    document.getElementById("nameF").value = "";
+    document.getElementById("ageF").value = "";
+    document.getElementById("scaleColor").value = "";
+    document.getElementById("weight").value = "";
   } else alert("invalid input");
 }
 function addBird() {
@@ -68,6 +76,10 @@ function addBird() {
     addedArray[cnt] = new Birds(bName, bAge, bFeatherColor, bBeakType);
     displayAnimal();
     cnt++;
+    document.getElementById("nameB").value = "";
+    document.getElementById("ageB").value = "";
+    document.getElementById("featherColor").value = "";
+    document.getElementById("beakType").value = "";
   } else alert("invalid input");
 }
 window.addEventListener("load", (e) => {
