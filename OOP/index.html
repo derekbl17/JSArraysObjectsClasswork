@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <fieldset>
+        <div id="bigDiv">
+          <div id="smallDivFirst">
+            <label for="firstName">Vardas</label>
+            <input
+              placeholder="Vardenis"
+              type="text"
+              name="firstName"
+              id="firstName"
+              required
+            />
+          </div>
+          <div id="smallDivLast">
+            <label for="lastName">Pavarde</label>
+            <input
+              placeholder="Pavardenis"
+              type="text"
+              name="lastName"
+              id="lastName"
+              required
+            />
+          </div>
+        </div>
+        <label for="cardNr">Korteles Nr.</label>
+        <input
+          placeholder="1"
+          type="number"
+          name="cardNr"
+          id="cardNr"
+          required
+        />
+
+        <label for="bookName">Knygos pavadinimas</label>
+        <input
+          placeholder="Knyga"
+          type="text"
+          name="bookName"
+          id="bookName"
+          required
+        />
+        <button type="submit" id="formSubButton">Submit</button>
+      </fieldset>
+      <table>
+        <thead>
+          <th>Vardas</th>
+          <th>Pavarde</th>
+          <th>Korteles Nr.</th>
+          <th>Knygos pavadinimas</th>
+          <th>PANAIKINTI</th>
+        </thead>
+        <tbody id="tBody"></tbody>
+      </table>
+    </main>
+    <!-- <script src="animal.js" type="module"></script>
+    <script src="malmal.js" type="module"></script>
+    <script src="js.js" type="module"></script>
+    <script src="dog.js" type="module"></script>
+    <script src="dogUnit.js" type="module"></script> -->
+    <script src="reading.js" type="module"></script>
+  </body>
+</html>

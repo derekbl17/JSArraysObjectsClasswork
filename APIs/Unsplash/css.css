@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+img {
+  width: 400px;
+  height: 400px;
+}
+#mainGala {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.imgCard {
+  width: fit-content;
+}
