@@ -10,51 +10,75 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row my-5">
-        <h1 class="text-center text-secondary">
-          Vanilla JavaScript and Firebase CRUD project
-        </h1>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <form class="px-3">
-            <div class="mb-3">
-              <label for="enterID" class="form-label text-secondary"
-                >Prekės ID</label
+    <main>
+      <div class="container">
+        <div class="row my-5">
+          <h1 class="text-center text-secondary">
+            Vanilla JavaScript and Firebase CRUD project
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <form class="px-3">
+              <div class="mb-3">
+                <label for="enterID" class="form-label text-secondary"
+                  >Prekės ID</label
+                >
+                <input type="text" class="form-control" id="enterID" />
+              </div>
+              <div class="mb-3">
+                <label for="enterName" class="form-label text-secondary"
+                  >Produkto pavadinimas</label
+                >
+                <input type="text" class="form-control" id="enterName" />
+              </div>
+              <div class="mb-3">
+                <label for="enterDescription" class="form-label text-secondary"
+                  >Produkto aprašymas</label
+                >
+                <input type="text" class="form-control" id="enterDescription" />
+              </div>
+              <div class="mb-3">
+                <label for="enterLink" class="form-label text-secondary"
+                  >Product image link</label
+                >
+                <input type="text" class="form-control" id="enterLink" />
+              </div>
+              <div
+                class="mb-3 d-flex justify-content-around align-items-center"
               >
-              <input type="text" class="form-control" id="enterID" />
-            </div>
-            <div class="mb-3">
-              <label for="enterName" class="form-label text-secondary"
-                >Produkto pavadinimas</label
-              >
-              <input type="text" class="form-control" id="enterName" />
-            </div>
-            <div class="mb-3">
-              <label for="enterDescription" class="form-label text-secondary"
-                >Produkto aprašymas</label
-              >
-              <input type="text" class="form-control" id="enterDescription" />
-            </div>
-            <div class="mb-3 d-flex justify-content-around align-items-center">
-              <button type="submit" class="btn btn-secondary" id="insert">
-                Insert
-              </button>
-              <button type="submit" class="btn btn-secondary" id="update">
-                Update
-              </button>
-              <button type="submit" class="btn btn-secondary" id="remove">
-                Delete
-              </button>
-            </div>
-          </form>
+                <button type="submit" class="btn btn-secondary" id="insert">
+                  Insert
+                </button>
+                <button type="submit" class="btn btn-secondary" id="update">
+                  Update
+                </button>
+                <button type="submit" class="btn btn-secondary" id="remove">
+                  Delete
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>description</th>
+              <th>img</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </section>
+    </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

@@ -1,0 +1,9 @@
+#tableImg {
+  height: 100px;
+  width: 150px;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 4rem 2px;
+  margin: 0 auto;
+}
